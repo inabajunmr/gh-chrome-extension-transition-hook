@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Sample for GitHub",
+  "version": "1.0.0",
+  "description": "Sample Chrome extension for GitHub issue and pull request.",
+  "permissions": ["https://github.com/*"],
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "run_at": "document_end",
+      "js": ["scripts/main.js"]
+    }
+  ]
+}
